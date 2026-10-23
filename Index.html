@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a1230">
+<title>NEXA ARROWS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+
+  <section id="screen-menu" class="screen active" aria-label="Main menu">
+    <h1 class="logo big">NEXA<span>ARROWS</span></h1>
+    <p class="tagline">Clear every arrow. Tap in the right order.</p>
+    <div class="stack">
+      <button class="btn primary" id="btn-play">Play</button>
+      <button class="btn" id="btn-levels">Levels</button>
+      <button class="btn ghost" id="btn-menu-sound">Sound: on</button>
+    </div>
+  </section>
+
+  <section id="screen-levels" class="screen" aria-label="Level selection">
+    <h2>Choose a level</h2>
+    <div id="level-grid" class="level-grid"></div>
+    <button class="btn" id="btn-levels-back">Back</button>
+  </section>
+
+  <section id="screen-game" class="screen" aria-label="Gameplay">
+    <header class="hud">
+      <div class="logo">NEXA<span>ARROWS</span></div>
+      <div class="stat"><small>Level</small><b id="hud-level">1</b></div>
+      <div class="stat"><small>Left</small><b id="hud-left">0</b></div>
+      <div class="stat"><small>Moves</small><b id="hud-moves">0</b></div>
+      <button class="icon-btn" id="btn-sound" aria-label="Toggle sound">♪</button>
+    </header>
+    <div class="board-wrap"><div id="board" class="board" role="group" aria-label="Puzzle board"></div></div>
+    <p id="message" class="message" aria-live="polite"></p>
+    <footer class="controls">
+      <button class="btn" id="btn-hint">Hint</button>
+      <button class="btn" id="btn-restart">Restart</button>
+      <button class="btn" id="btn-pause">Pause</button>
+    </footer>
+  </section>
+
+  <section id="screen-complete" class="screen" aria-label="Level completed">
+    <div class="burst" aria-hidden="true">✓</div>
+    <h2>Level cleared</h2>
+    <p id="complete-info" class="tagline"></p>
+    <div class="stack">
+      <button class="btn primary" id="btn-next">Next level</button>
+      <button class="btn" id="btn-replay">Replay</button>
+      <button class="btn ghost" id="btn-complete-menu">Menu</button>
+    </div>
+  </section>
+
+  <section id="screen-done" class="screen" aria-label="All levels completed">
+    <div class="burst" aria-hidden="true">★</div>
+    <h2>All levels complete</h2>
+    <p class="tagline">Every arrow is gone. Nicely done.</p>
+    <div class="stack">
+      <button class="btn primary" id="btn-done-levels">Replay a level</button>
+      <button class="btn ghost" id="btn-done-menu">Menu</button>
+    </div>
+  </section>
+
+  <div id="pause" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Paused">
+    <div class="panel">
+      <h2>Paused</h2>
+      <div class="stack">
+        <button class="btn primary" id="btn-resume">Resume</button>
+        <button class="btn" id="btn-pause-sound">Sound: on</button>
+        <button class="btn" id="btn-pause-menu">Main menu</button>
+        <button class="btn danger" id="btn-reset">Reset saved progress</button>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
